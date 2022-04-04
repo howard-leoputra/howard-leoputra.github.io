@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Howard page</title>
+        <title>Howard Leoputra</title>
 		
 		<link rel="stylesheet" href="fonts/roboto/font.css">
 		<style>
 			body { font-family: Roboto, sans-serif; }
 			.youtube_td { border:1px solid black; }
-			.game_info_td { border:1px solid black; width: 600px; vertical-align:top; }
+			.info_td { border:1px solid black; width: 600px; vertical-align:top; }
 		</style>
+        <link rel="stylesheet" href="css/style.css">
     </head>
+    
     <body>
+
+        <!-- Heading -->
 		<div>
 			<img src="images/Howard.png" style="display:inline-block; vertical-align:middle;" width="52" height="67"></img>
 			<h2 style="display:inline-block;">Welcome to my page</h2>
 		</div>
 		
+        <p>
+            My name is Howard Leoputra. I enjoy reading and exploring technology. 
+            In this page, you can find some of the games that I made, my drawings, and many more.
+        </p>
+        
+
+        <!-- Start The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+        <!-- End The Modal -->
+        
 		<p> 
-			<h4>My Games</h4>
+			<h3>Games Related</h3>
 			
 			<table style="border:1px solid black;border-collapse:collapse;">
 			<tr>
-				<td <td class="youtube_td">
+				<td class="youtube_td">
 					<iframe width="425" height="240" src="https://www.youtube.com/embed/bkuXC4sLjJc?rel=0&amp;showinfo=0" allowfullscreen></iframe><br>
 				</td>
-				<td class="game_info_td">
-					<i>'They Never Stops'</i> is a zombie game that I made. Click <a href="https://howard-leoputra.github.io/they-never-stops.html">here</a> to play.<br>
+				<td class="info_td">
+					<i>'They Never Stops'</i> is a zombie game that I made (Mar 2022). Click <a href="https://howard-leoputra.github.io/they-never-stops.html">here</a> to play.<br>
 					<ul>
 						<li>How to play</li>
 						<ul>
@@ -39,32 +57,137 @@
 				</td>
 			</tr>
 			<tr>
-				<td <td class="youtube_td">
+				<td class="youtube_td">
 					<iframe width="425" height="240" src="https://www.youtube.com/embed/2GP-PE6qLCg?rel=0&amp;showinfo=0" allowfullscreen></iframe><br>
 				</td>
-				<td class="game_info_td">
-					Me inside Streets of Rage 2<br>
+				<td class="info_td">
+					Me inside Streets of Rage 2 <br>
 					<ul>
 						<li>Pixel art</li>
 						<li>Game editing</li>
 						<li>SEGA console hack</li>
+                        <li>
+                            <img src="images/Howard-original3.png" style="display:inline-block; vertical-align:middle;" width="52" height="67"></img> &#8594
+                            <img src="images/Howard.png" style="display:inline-block; vertical-align:middle;" width="52" height="67"></img>
+                        </li>
 					</ul>
 				</td>
 			</tr>
-			<tr>
-				<td <td class="youtube_td">
-					<iframe width="425" height="240" src="https://www.youtube.com/embed/OZ-FaM53HN8?rel=0&amp;showinfo=0" allowfullscreen></iframe><br>
+            <tr>
+				<td class="youtube_td">
+					<iframe width="425" height="240" src="https://www.youtube.com/embed/PSEcHNVw9T8?rel=0&amp;showinfo=0" allowfullscreen></iframe><br>
 				</td>
-				<td class="game_info_td">
-					Grumpy monkey<br>
+				<td class="info_td">
+					My Editing of Zelda (SNES)<br>
 					<ul>
-						<li>Cute yellow monkey gets easily angry when teased. Try entering big $ amount and enjoy what happen next.</li>
+						<li>Pixel art</li>
+                        <li>SNES game hack</li>
+                        <li>
+                            <img class="myImg" src="images/Zelda_editing_face.png" style="display:inline-block; vertical-align:middle;" width="171" height="80" alt="Howard and Zelda" onclick="showImage(this, '');"></img>
+                        </li>
 					</ul>
+				</td>
+			</tr>
+            <tr>
+				<td class="youtube_td">
+					
+				</td>
+				<td class="info_td">
+                    Visit my <a href="https://www.youtube.com/channel/UCWQQ8TSyVVw5wtoko_I6nLw">youtube</a> for more videos
 				</td>
 			</tr>
 			</table>
 		
 		</p>
-		
+
+        <p> 
+			<h3>My Drawings</h3>
+			
+			<table style="border:1px solid black;border-collapse:collapse;">
+			<tr>
+                <td class="info_td">
+					<ul>
+						<img class="myImg" src="images/drawings/Dog.jpg" style="display:inline-block; vertical-align:middle;" width="480" height="360" alt="Dog" onclick="showImage(this, 'https://www.youtube.com/watch?v=KeL3HkyXF_0');">
+                        </img>
+					</ul>
+				</td>
+                <td class="info_td">
+					<ul>
+						<img class="myImg" src="images/drawings/Mage.jpg" style="display:inline-block; vertical-align:middle;" width="480" height="360" alt="Mage" onclick="showImage(this, 'https://www.youtube.com/watch?v=XcSZPccUOak');">
+                        </img>
+					</ul>
+				</td>
+            </tr>
+            <tr>
+                <td class="info_td">
+					<ul>
+						<img class="myImg" src="images/drawings/Viking.jpg" style="display:inline-block; vertical-align:middle;" width="480" height="360" alt="Viking" onclick="showImage(this, 'https://www.youtube.com/watch?v=B8WdhFpJwBg');">
+                        </img>
+					</ul>
+				</td>
+                <td class="info_td">
+                    <ul>
+						<img class="myImg" src="images/drawings/Goku.jpg" style="display:inline-block; vertical-align:middle;" width="480" height="360" alt="Goku" onclick="showImage(this, 'https://www.youtube.com/watch?v=qx2_lkZYm6s');">
+                        </img>
+					</ul>
+				</td>
+            </tr>
+            <tr>
+                <td class="info_td">
+					<ul>
+						<img class="myImg" src="images/drawings/Drunken1.png" style="display:inline-block; vertical-align:middle;" width="480" height="510" alt="Obelix" onclick="showImage(this, '');">
+                        </img>
+					</ul>
+				</td>
+                <td class="info_td">
+                    <ul>
+						<img class="myImg" src="images/drawings/Drunken2.png" style="display:inline-block; vertical-align:middle;" width="480" height="510" alt="Obelix" onclick="showImage(this, '');">
+                        </img>
+					</ul>
+					<!-- <ul>
+						<img class="myImg" src="images/drawings/Cat.jpg" style="display:inline-block; vertical-align:middle;" width="480" height="360" alt="Cat" onclick="showImage(this, 'https://www.youtube.com/watch?v=PFFcBpKJ-gs');">
+                        </img>
+					</ul> -->
+				</td>
+            </tr>
+            </table>
+        </p>
+        <script>
+            function showImage(img, youtubeUrl)
+            {
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                captionText.innerHTML = img.alt;
+                if ( youtubeUrl != "" ) 
+                {
+                    captionText.innerHTML += "<br>";
+                    captionText.innerHTML += "Click <a href='" + youtubeUrl + "'>here</a> to see my drawing process.";
+                }
+            }
+
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // // Get the image and insert it inside the modal - use its "alt" text as a caption
+            // var img = document.getElementById("myImg");
+            // var modalImg = document.getElementById("img01");
+            // var captionText = document.getElementById("caption");
+            // img.onclick = function() {
+            //     modal.style.display = "block";
+            //     modalImg.src = this.src;
+            //     captionText.innerHTML = this.alt;
+            // }
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+                modal.style.display = "none";
+            }
+        </script>
+
     </body>
 </html>
