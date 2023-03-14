@@ -1,6 +1,6 @@
 {
     "icons": [
-      { "src": "./images/favicon/howard-300x300.png?", "type": "image/png", "sizes": "300x300" },
-      { "src": "./images/favicon/howard-512x512.png?", "type": "image/png", "sizes": "512x512" }
+      { "src": "./images/favicon/Howard-300x300.png?", "type": "image/png", "sizes": "300x300" },
+      { "src": "./images/favicon/Howard-512x512.png?", "type": "image/png", "sizes": "512x512" }
     ]
   }
