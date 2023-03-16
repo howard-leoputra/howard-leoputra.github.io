@@ -10,43 +10,41 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/Howard-180x180.png">
 		<link rel="manifest" href="../manifest.webmanifest">
 
-        <link rel="stylesheet" href="../fonts/roboto/font.css">
-        <style>
-            body { font-family: Roboto, sans-serif; }
-            .youtube_td { border:1px solid black; }
-            .info_td { border:1px solid black; width: 600px; vertical-align:top; }
-        </style>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Sassy+Frass&family=Yellowtail&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css">
+
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css">
         </head>
 
-        <body>
+<body>
 
-        <!-- Begin Heading -->
-        <div>
-            <img src="../images/Howard1.png" style="display:inline-block; vertical-align:middle;" width="125" height="160"></img>
-            <div style="display:inline-block; vertical-align:middle;">
-                <h2>Salt and Pepper</h2>
-                <h3>by Howard Leoputra</h3>
-                <h4>25 Dec 2022</h4>
-            </div>
-        </div>
-        <!-- End Heading -->
+<!-- Begin Heading -->
+<div class="background"></div>
+<div class="woolf"></div>
+<!-- End Heading -->
+
+<div class="content-container">
+    <div class="content">
+
+        <h1>Salt and Pepper</h1>
+        <hr>
+        <h2>by Howard Leoputra</h2>
+
+        <h3>Dec 2022</h3>
 
         <p>
-            If you ask me, salt <i class="fa-light fa-salt-shaker"></i> and pepper <i class="fa-light fa-pepper-hot"></i> do not make a good combination. That is why I got salt on my bedroom floor and pepper
+            <span>I</span>f you ask me, salt <i class="fa-light fa-salt-shaker"></i> and pepper <i class="fa-light fa-pepper-hot"></i> do not make a good combination.
+            That is why I got salt on my bedroom floor and pepper
             sprinkling in the air. Just two grinders, one salt, one pepper and that is how I started the war against salt and pepper,
             and here is how it started.
         </p>
-
-        <!-- Begin Modal -->
-        <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-        </div>
-        <!-- End The Modal -->
-        
+        <!-- <p>
+            If you ask me, salt <i class="fa-light fa-salt-shaker"></i> and pepper <i class="fa-light fa-pepper-hot"></i> do not make a good combination. That is why I got salt on my bedroom floor and pepper
+            sprinkling in the air. Just two grinders, one salt, one pepper and that is how I started the war against salt and pepper,
+            and here is how it started.
+        </p> -->
 
         <!-- Begin Content -->
 
@@ -165,45 +163,19 @@
         </p>
         <!-- End Content -->
 
-        <script>
-            function showImage(img, youtubeUrl, override_src = '')
-            {
-                var modalImg = document.getElementById("img01");
-                var captionText = document.getElementById("caption");
-                modal.style.display = "block";
-                if (override_src != '')
-                    modalImg.src = override_src;
-                else
-                    modalImg.src = img.src;
-                captionText.innerHTML = img.alt;
-                if ( youtubeUrl != "" ) 
-                {
-                    captionText.innerHTML += "<br>";
-                    captionText.innerHTML += "Click <a href='" + youtubeUrl + "'>here</a> to see my drawing process.";
-                }
-            }
+        <p> 
+			<span>The End<span>
+		</p>
 
-            // Get the modal
-            var modal = document.getElementById("myModal");
-            
-            // // Get the image and insert it inside the modal - use its "alt" text as a caption
-            // var img = document.getElementById("myImg");
-            // var modalImg = document.getElementById("img01");
-            // var captionText = document.getElementById("caption");
-            // img.onclick = function() {
-            //     modal.style.display = "block";
-            //     modalImg.src = this.src;
-            //     captionText.innerHTML = this.alt;
-            // }
-            
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() { 
-                modal.style.display = "none";
-            }
-        </script>
+        <p>
+		</p>
 
-    </body>
+        <p>
+            &copy; 2023 Howard Leoputra
+        </p>
+    </div>
+</div>
+<!-- Body Content -->
+  
+</body>
 </html>
