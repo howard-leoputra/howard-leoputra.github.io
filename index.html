@@ -47,6 +47,10 @@
         <p> 
             <h3>Coding and Technology</h3>
             
+            <p>
+                Python, Scratch, Krita, Gimp, Console game emulator, and many more.
+            </p>
+
             <table style="border:1px solid black;border-collapse:collapse;">
                 <tr>
                     <td class="youtube_td">
@@ -129,7 +133,7 @@
                                 <img src="images/Howard.png" style="display:inline-block; vertical-align:middle;" width="52" height="67"></img>
                             </li>
                             <li>
-                                <img class="myImg" src="images/Mei2.png" style="display:inline-block; vertical-align:middle;" width="134" height="80" alt="Howard as Zelda" onclick="showImage(this, '');"></img>
+                                <img class="myImg" src="images/Mei2.png" style="display:inline-block; vertical-align:middle;" width="134" height="80" alt="My little sister" onclick="showImage(this, '');"></img>
                             </li>
                         </ul>
                     </td>
@@ -256,6 +260,27 @@
             <table style="border:1px solid black;border-collapse:collapse;">
                 <tr>
                     <td class="youtube_td">
+                        <img class="myImg" src="images/apollos-57-winter-2023/Apollos-57-scores.png" style="display:inline-block; vertical-align:middle;" width="425" height="216" alt="Apollos 057 games winter 2023" onclick="showImageFullSize(this, '');">
+                        </img>
+                    </td>
+                    <td class="youtube_td">
+                        <center>Apollos 057's first championship win (winter 2023).</center>
+                        <center>"Talent wins games, but teamwork wins championships."</center>
+                        <center><a href="https://www.forbes.com/sites/grantfreeland/2018/06/01/talent-wins-games-teamwork-wins-championships/">Michael Jordan</a>.</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="youtube_td">
+                        <img class="myImg" src="images/apollos-57-winter-2023/Apollos-57-championship-point-1.png" style="display:inline-block; vertical-align:middle;" width="425" height="224" alt="Championship point" onclick="showImageFullSize(this, 'https://www.youtube.com/watch?v=mYZujWm5UUo');">
+                        </img>
+                    </td>
+                    <td class="youtube_td">
+                        <img class="myImg" src="images/apollos-57-winter-2023/Apollos-57-championship-point-2.png" style="display:inline-block; vertical-align:middle;" width="425" height="224" alt="Championship point" onclick="showImageFullSize(this, '');">
+                        </img>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="youtube_td">
                         <iframe width="425" height="240" src="https://www.youtube.com/embed/Tb93hFrjO5M?rel=0&amp;showinfo=0" allowfullscreen ></iframe><br>
                     </td>
                     <td class="youtube_td">
@@ -276,6 +301,7 @@
                         <ul>
                             <li><a href="writings/salt-and-pepper/salt-and-pepper.html">Salt and Pepper</a></li>
                             <li><a href="writings/ducky/ducky_magical_donut.html">Ducky</a></li>
+                            <li><a href="writings/student-executive-year-5/speech.html">Student Executive Speech</a></li>
                         </ul>
                     </li>
                     <li><a href="games.html">Games that I play</a></li>
@@ -306,7 +332,30 @@
                 if ( youtubeUrl != "" ) 
                 {
                     captionText.innerHTML += "<br>";
-                    captionText.innerHTML += "Click <a href='" + youtubeUrl + "'>here</a> to see my drawing process.";
+                    captionText.innerHTML += "Click <a href='" + youtubeUrl + "'>here</a> to see the detail.";
+                }
+            }
+
+            function showImageFullSize(img, youtubeUrl, override_src = '')
+            {
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+                modal.style.display = "block";
+                modalImg.style.maxWidth = img.naturalWidth + "px";
+                if (override_src != '')
+                    modalImg.src = override_src;
+                else
+                {
+                    modalImg.src = img.src;
+                    modalImg.width = img.naturalWidth;
+                    //modalImg.height = img.naturalHeight;
+                    console.log(img.naturalWidth);
+                }
+                captionText.innerHTML = img.alt;
+                if ( youtubeUrl != "" ) 
+                {
+                    captionText.innerHTML += "<br>";
+                    captionText.innerHTML += "Click <a href='" + youtubeUrl + "'>here</a> to see the detail.";
                 }
             }
 
