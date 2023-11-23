@@ -8,6 +8,7 @@
 body
 {
     background: #000;
+    cursor: none; /* for debugging - show original cursor */
 }
 
 section
@@ -18,20 +19,30 @@ section
 section h1
 {
     font-size: 4.0em;
-    color: #555;
+    color: #aaa;
 }
-
 section h2
 {
     font-size: 3.5em;
     color: #555;
 }
-
+section h3
+{
+    font-size: 1.8em;
+    color: #aaa;
+}
+section h4
+{
+    font-size: 1.4em;
+    color: #aaa;
+}
 section p
 {
     font-size: 1.2em;
     color: #555;
 }
+
+/* === RAINBOW SCROLLBAR === */
 
 #scrollpath
 {
@@ -42,18 +53,18 @@ section p
     height: 100%;
     background: rgba(255,255,255,0.05);
 }
-#preogressbar
+#scrollProgressBar
 {
     position: fixed;
     top: 0;
     right: 0;
     width: 10px;
-    /*height: 50%;*/
+    /*height: 50%; - for debugging */
     background: linear-gradient(to top, #008aff, #00ffe7);
-    animation: animate 5s linear infinite;
+    animation: animate_scrollbar 5s linear infinite;
 }
-#preogressbar:before,
-#preogressbar:after
+#scrollProgressBar:before,
+#scrollProgressBar:after
 {
     content: '';
     position: absolute;
@@ -64,11 +75,11 @@ section p
     background: linear-gradient(to top, #008aff, #00ffe7);
     filter: blur(10px);
 }
-#preogressbar:after
+#scrollProgressBar:after
 {
     filter: blur(30px);
 }
-@keyframes animate
+@keyframes animate_scrollbar
 {
     0%,100%
     {
@@ -81,7 +92,7 @@ section p
 }
 ::-webkit-scrollbar
 {
-    width: 0;
+    width: 0; /* for debugging - show original scrollbar */
 }
 
 #percent
@@ -94,4 +105,133 @@ section p
     font-size: 2em;
     writing-mode: vertical-rl;
     text-orientation: sideways;
+}
+
+
+/* === RAINBOW CURSOR === */
+
+#cursor
+{
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border-top: 5px solid #0f0;
+    border-left: 5px solid #0f0;
+    transform-origin: top;
+    transform: translate(-1px,5px) rotate(15deg) scale(0);
+    transform: transform 0.1s;
+    pointer-events: none;
+    animation: animate_cursor 5s linear infinite;
+}
+#cursor::before
+{
+    content: '';
+    position: absolute;
+    left: -2.5px;
+    width: 5px;
+    height: 40px;
+    background: #0f0;
+    transform-origin: top;
+    transform: rotate(315deg);
+}
+body:hover #cursor
+{
+    transform: translate(-1px,5px) rotate(15deg) scale(1);
+}
+@keyframes animate_cursor 
+{
+    0%
+    {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 30px #0f0) hue-rotate(0deg);
+    }
+    100%
+    {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 30px #0f0) hue-rotate(360deg);
+    }
+}
+
+
+/* === RAINBOW TEXT HOVER === */
+
+.rainbowTextOnHover
+{
+    position: relative;
+    /*font-size: 4.0em;*/
+    letter-spacing: 0.01em;
+    /*cursor: default;*/
+    /* text-transform: uppercase; */
+    font-weight: 500;
+}
+h1.rainbowTextOnHover span
+{
+    color: #aaa;
+    transition: 0.25s;
+}
+h2.rainbowTextOnHover span
+{
+    color: #555;
+    transition: 0.25s;
+}
+h2.rainbowTextOnHover:hover span,
+h1.rainbowTextOnHover:hover span
+{
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+}
+
+p.rainbowTextOnHover span
+{
+    color: #555;
+    transition: 5.55s;
+}
+p.rainbowTextOnHover:hover span
+{
+    color: #fff;
+}
+
+/* === RAINBOW TEXT Continously on window load === */
+
+.rainbowText
+{
+    position: relative;
+    font-size: 3.8em;
+    letter-spacing: 0.05em;
+}
+.rainbowText span
+{
+    color: #0f0;
+}
+.rainbowText-transform
+{
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0,
+    0 0 15px #0f0,
+    0 0 30px #0f0;
+    transition: 0.25s;
+}
+
+
+/* === snow-fall === */
+
+#snow-fall{
+    width: 100%;
+    height: 100%;
+    background: #262626 url(6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+}
+
+#thank_you {
+    margin: auto;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    color: #ddd;
+    display: none;
+}
+
+::selection {
+    background: #d1ecf1;
 }
