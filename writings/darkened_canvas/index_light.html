@@ -2,14 +2,15 @@
 <html>
     <head>
         <title>Darkened Canvas</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style_invert.css">
     </head>
     <body>
         <div id="scrollProgressBar"></div>
         <div id="scrollpath"></div>
         <div id="percent"></div>
         <div id="cursor"></div>
-        <button class="button-64" role="button" onclick='location.href="./index_light.html"'><span class="text">Light</span></button>
+        <input id="fontColorSlider" min="0" max="255" type="range" value="85" oninput="changeFontColor(this.value);" />
+        <button class="button-64" role="button" onclick='location.href="./index.html"'><span class="text">Dark</span></button>
         
         <section>
             
@@ -21,13 +22,13 @@
 
             <h2>Prologue</h2>
             <p>
-	Dad got a new job so we are moving houses. Everything is falling apart.
-I had to say my last farewells to my best friend Tom, all my other friends and my old town, the one that I truly belong.
-Before long, I was glancing back at my old house, thinking if this would be the last time, I would see it.
-I would have to make new friends, new connections, and get used it.
-I mean, it is all not that bad, until I found out the horrors of this cursed house.
-</p>
-<br>
+            Dad got a new job so we are moving houses. Everything is falling apart.
+            I had to say my last farewells to my best friend Tom, all my other friends and my old town, the one that I truly belong.
+            Before long, I was glancing back at my old house, thinking if this would be the last time, I would see it.
+            I would have to make new friends, new connections, and get used it.
+            I mean, it is all not that bad, until I found out the horrors of this cursed house.
+            </p>
+            <br>
 
  	<h2>Chapter 1 - The New House</h2>
 <p>
@@ -536,12 +537,20 @@ As I got up to leave, the 5-year-old me in the photo smiled and winked back at m
                 // rainbow text on mouse hover
                 let rainbowTextOnHovers = document.querySelectorAll('.rainbowTextOnHover');
                 for (const rainbowTextOnHover of rainbowTextOnHovers) {
-                    var delimiter = (rainbowTextOnHover.tagName == "P") ? ' ' : ''; // words or letters
+                    var delimiter = (rainbowTextOnHover.tagName == "P") ? '.' : ''; // words or letters
                     
                     if (rainbowTextOnHover.tagName == "P")
                     rainbowTextOnHover.innerHTML = rainbowTextOnHover.innerText.split(delimiter).map((letters, i) => `<span style="transition-delay:${i * 40}ms;">${letters}</span>`).join(delimiter);
                     else
                     rainbowTextOnHover.innerHTML = rainbowTextOnHover.innerText.split(delimiter).map((letters, i) => `<span style="transition-delay:${i * 40}ms; filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join(delimiter);
+                }
+            }
+
+            {
+                let highlightTextOnHovers = document.querySelectorAll('.highlightTextOnHover');
+                for (const highlightTextOnHover of highlightTextOnHovers) {
+                    var delimiter = '.';
+                    highlightTextOnHover.innerHTML = highlightTextOnHover.innerText.split(delimiter).map((letters, i) => `<span>${letters}</span>`).join(delimiter);
                 }
             }
 
@@ -562,22 +571,13 @@ As I got up to leave, the 5-year-old me in the photo smiled and winked back at m
                 setTimeout(rainbox_text_change,1000);
             }
 
-            const inv = (hex) => '#' + hex.match(/[a-f0-9]{2}/ig).map(e => (255 - parseInt(e, 16) | 0).toString(16).replace(/^([a-f0-9])$/, '0$1')).join('')
+            function changeFontColor(color)
+            {
+                for (const ele of document.querySelectorAll('*')) {
+                    ele.style.color = "rgb("+color+","+color+","+color+")";
+                }
 
-            const invert = () =>
-            document.querySelectorAll('circle')
-                .forEach(c => 
-                (hex = c.getAttribute('fill')) && 
-                c.setAttribute('fill', inv(hex))
-                )
-
-            console.log('#AF40FF', inv('#AF40FF'));
-            console.log('#5B42F3', inv('#5B42F3'));
-            console.log('#00DDEB', inv('#00DDEB'));
-            console.log('#AF40FF', inv('#28a745'));
-            console.log('#5B42F3', inv('#007bff'));
-            console.log('#00DDEB', inv('#dc3545'));
-
+            }
         </script>
 
     </body>

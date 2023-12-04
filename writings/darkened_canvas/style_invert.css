@@ -7,7 +7,7 @@
 
 body
 {
-    background: #000;
+    background: #fff;
     cursor: none; /* for debugging - show original cursor */
 }
 
@@ -19,7 +19,7 @@ section
 section h1
 {
     font-size: 4.0em;
-    color: #aaa;
+    color: #222;
 }
 section h2
 {
@@ -29,18 +29,31 @@ section h2
 section h3
 {
     font-size: 1.8em;
-    color: #aaa;
+    color: #222;
 }
 section h4
 {
     font-size: 1.4em;
-    color: #aaa;
+    color: #222;
 }
 section p
 {
     font-size: 1.2em;
     color: #555;
 }
+
+#fontColorSlider {
+    position: fixed;
+    top: 2vh;
+    left: 2vw;
+    background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
+    border: solid 1px #82CFD0;
+    border-radius: 8px;
+    height: 7px;
+    width: 356px;
+    outline: none;
+    display: none;
+  }
 
 /* === RAINBOW SCROLLBAR === */
 
@@ -101,7 +114,7 @@ section p
     top: 50%;
     transform: translateY(-50%) rotateX(180deg) rotateY(180deg);
     right: 15px;
-    color: #fff;
+    color: #000;
     font-size: 2em;
     writing-mode: vertical-rl;
     text-orientation: sideways;
@@ -115,8 +128,8 @@ section p
     position: fixed;
     width: 25px;
     height: 25px;
-    border-top: 5px solid #0f0;
-    border-left: 5px solid #0f0;
+    border-top: 5px solid #0a0;
+    border-left: 5px solid #0a0;
     transform-origin: top;
     transform: translate(-1px,5px) rotate(15deg) scale(0);
     transform: transform 0.1s;
@@ -130,7 +143,7 @@ section p
     left: -2.5px;
     width: 5px;
     height: 40px;
-    background: #0f0;
+    background: #0a0;
     transform-origin: top;
     transform: rotate(315deg);
 }
@@ -142,11 +155,11 @@ body:hover #cursor
 {
     0%
     {
-        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 30px #0f0) hue-rotate(0deg);
+        filter: drop-shadow(0 0 5px #0a0) hue-rotate(0deg);
     }
     100%
     {
-        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 30px #0f0) hue-rotate(360deg);
+        filter: drop-shadow(0 0 5px #0a0) hue-rotate(360deg);
     }
 }
 
@@ -164,7 +177,7 @@ body:hover #cursor
 }
 h1.rainbowTextOnHover span
 {
-    color: #aaa;
+    color: #222;
     transition: 0.25s;
 }
 h2.rainbowTextOnHover span
@@ -175,8 +188,8 @@ h2.rainbowTextOnHover span
 h2.rainbowTextOnHover:hover span,
 h1.rainbowTextOnHover:hover span
 {
-    color: #0f0;
-    text-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+    color: #023e7d; 
+    text-shadow: 0 0 5px #023e7d, 0 0 15px #023e7d, 0 0 30px #023e7d;
 }
 
 p.rainbowTextOnHover span
@@ -186,8 +199,20 @@ p.rainbowTextOnHover span
 }
 p.rainbowTextOnHover:hover span
 {
-    color: #fff;
+    color: #000;
 }
+
+/* === HIGHLIGHT SENTENCE HOVER === */
+
+/* p.highlightTextOnHover span:hover
+{
+    color: #fff;
+} */
+p:hover
+{
+    color: #000;
+}
+
 
 /* === RAINBOW TEXT Continously on window load === */
 
@@ -199,14 +224,14 @@ p.rainbowTextOnHover:hover span
 }
 .rainbowText span
 {
-    color: #0f0;
+    color: #0a0;
 }
 .rainbowText-transform
 {
-    color: #0f0;
-    text-shadow: 0 0 5px #0f0,
-    0 0 15px #0f0,
-    0 0 30px #0f0;
+    color: #0a0;
+    text-shadow: 0 0 5px #0a0,
+    0 0 15px #0a0,
+    0 0 30px #0a0;
     transition: 0.25s;
 }
 
@@ -242,7 +267,7 @@ p.rainbowTextOnHover:hover span
     top: 1vh;
     left: 100px;
     align-items: center;
-    background-image: linear-gradient(144deg,#90c455, #c45567 50%,#5576c4);
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     border: 0;
     border-radius: 8px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
